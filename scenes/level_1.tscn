@@ -22,3 +22,5 @@ position = Vector2(608, 260)
 [node name="Maze1" parent="." instance=ExtResource("4_wbaib")]
 z_index = -10
 position = Vector2(619, 728)
+
+[connection signal="body_exited" from="Maze1" to="." method="_on_maze_1_body_exited"]
