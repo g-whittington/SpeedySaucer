@@ -41,7 +41,6 @@ offset_bottom = 40.0
 
 [node name="StartLabel" type="Label" parent="Labels"]
 z_index = -1
-layout_mode = 0
 offset_left = 452.0
 offset_top = 210.0
 offset_right = 547.0
@@ -51,7 +50,6 @@ label_settings = SubResource("LabelSettings_qah5q")
 
 [node name="TutorialLabel" type="Label" parent="Labels"]
 z_index = -1
-layout_mode = 0
 offset_left = 347.0
 offset_top = 368.0
 offset_right = 511.0
@@ -63,7 +61,6 @@ label_settings = SubResource("LabelSettings_l8ijq")
 
 [node name="EndLabel" type="Label" parent="Labels"]
 z_index = -25
-layout_mode = 0
 offset_left = 2398.0
 offset_top = 907.0
 offset_right = 2468.0
