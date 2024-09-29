@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bah286harjfue"]
+[gd_scene load_steps=7 format=3 uid="uid://bah286harjfue"]
 
 [ext_resource type="Texture2D" uid="uid://c35gfgumcnkr" path="res://assets/purple.png" id="1_haq5w"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_iap5d"]
 [ext_resource type="PackedScene" uid="uid://cgr022mpsduqa" path="res://scenes/player.tscn" id="2_nym33"]
 [ext_resource type="PackedScene" uid="uid://dom60x0l6vc8p" path="res://scenes/maze_1.tscn" id="4_wbaib"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_qah5q"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8ijq"]
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_iap5d")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-follow_viewport_enabled = true
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
 z_index = -100
@@ -24,7 +28,42 @@ stretch_mode = 1
 position = Vector2(608, 260)
 
 [node name="Maze1" parent="." instance=ExtResource("4_wbaib")]
-z_index = -10
+z_index = -50
 position = Vector2(619, 728)
+
+[node name="Labels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartLabel" type="Label" parent="Labels"]
+z_index = -1
+offset_left = 452.0
+offset_top = 210.0
+offset_right = 547.0
+offset_bottom = 255.0
+text = "START"
+label_settings = SubResource("LabelSettings_qah5q")
+
+[node name="TutorialLabel" type="Label" parent="Labels"]
+z_index = -1
+offset_left = 347.0
+offset_top = 368.0
+offset_right = 511.0
+offset_bottom = 443.0
+text = "- WASD to move
+- Get to the end area
+- Don't touch the sides"
+label_settings = SubResource("LabelSettings_l8ijq")
+
+[node name="EndLabel" type="Label" parent="Labels"]
+z_index = -25
+offset_left = 2398.0
+offset_top = 907.0
+offset_right = 2468.0
+offset_bottom = 952.0
+text = "END"
+label_settings = SubResource("LabelSettings_qah5q")
 
 [connection signal="body_exited" from="Maze1" to="." method="_on_maze_1_body_exited"]
